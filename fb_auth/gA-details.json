@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "sheetmusic-155921",
+  "private_key_id": "2b017742beb156a05c1b828902487e265fb37640",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDCL3Y3zolCbjJ2\nQJZVYkdxaApKfD3Q+ud1nsRyvmWb2P/Iwbc6bRDA99fOAOY7XA3jUEO1484qMOOf\n+QsKfP7v8uMA1N1+jj4bVwoKpB2U3lV8J3vGBex12yvZpO7PN3Pk3HRSTzVvFD9d\nCdyHH9iaAQ5I4etcGd3lQmxgCKJ9vkliutuMhLy89WuaKFUe4Wkb9QDqk8nWkG+C\nu6dn9LPFXwSpRelyAqxdNFah0XLR3YA3wQa9jJjPv00Bcf27GZaraY9eiIcMex7x\nscrkThJKzIWqh2Ya5CUKAw0bIPK+JcNZPB/DYF528PbczxhGHMqVFwmwx31q7oKq\nKN2kqV5fAgMBAAECggEAW7Gyto56BRrpDCraci4qwzPYLCz3ua9IzaMva2lZrJpu\nyfsjTN0EfMJrrpSBIwWIb07O8lxEVWrpiXg9jPHSJjcAlzts7d44GIvkq3qsl0fX\ngP1Z9nuEmXBph+fYdpPeT3MEIHvTpQSgGQxXjJzumGYoOyUnEMIMJD5V05EwPYRh\nsvrdNMfyT7NQ0L0tu3//y8nv5RUDZWqECxmVzuZvE3rKxhXhlqXbvuUDPdhHH6Pg\njyNbReDsu6mmYFPBh3ntsC30Me4xEjStlbJu2oyBXC+wO4CyoAFzoAedlBYtooM+\nkWgtBfqzf19aRU5ENy+L3J98eroANOFSGPqQJtXp/QKBgQD69wAi21mheyT0db3f\nWJD8v3W3ijdLYWQ3yNREoMbxJrgCAPpKbhAGEvsG6yn3uNIYvAm1HXYMPoebIEVC\nJK6KIUYNsNiLNV5/yZus5wIgFvJ1QwHy2GKpQ6t0VNEscoOItJhHGjt0cYtGKltc\n8Eim5VcWD50tfT8DrECIwbQznQKBgQDGFNUBWdkydsO3tApQpI2FNYQZgAUzRV8p\nyU0/glBLFtnANfl4orpEJAH1w+9wJVugs/Kxvm3svaMJUpM1I7GMdDQSrVDtH+gG\nFQOtfFpLlFgZFrjGYOsdttq3dIEa2HAvVFag9ScaNPTGlZobY9PTHM4qtpt7h2CL\nhq1Nn9CPKwKBgFx0wsgUp2CmTWcCOYEez8tNfcCwWs6agqFKi2j9Ek2lRgT29z6U\nbbLPK0vRNxTcMgqKu8jNob/BCZRMvzcu7F5XA8fnbt9aOgY57/Ay6sWHrqsklIMy\n1KYnF/MzjBwj0/F5FuCa+WxcqEKhOCd1Hk7eDsdB2VX43k4sF1pKgmjBAoGBALBO\nyI1MSNv3BBvWH7xJy0F/MdZ0saxCGgMajyxxNECx1R2VrTioNv0Bw9DaFpwOVHFE\n2kdFBZjL7nsUybxpydYHdHYPWFHHrYEEYWKgpcpR/txN8id5Cq1HHYRfKa8YaTpn\najgYHTbhXeIINMQeZeOp5wPzx477H37xX/4QutVDAoGBAOXmx2Khqt6p4IhDDr6W\nJYRKSm/Mwqh+urGqYrg1Q6nFafr4zuEC0VMOGYoCOcgW1BwhZ8tl1C/b6KdCptx9\nz0O3SbwW11TmfVQ0jfeEZn9NYu6MnSltxFBtekrfnSqTSCtNBL9gdgjrM+/2VwBr\nLqQ395bv97iiBfTUFU1f3nZA\n-----END PRIVATE KEY-----\n",
+  "client_email": "sa1-992@sheetmusic-155921.iam.gserviceaccount.com",
+  "client_id": "112955700292889977760",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/sa1-992%40sheetmusic-155921.iam.gserviceaccount.com"
+}

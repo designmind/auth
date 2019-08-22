@@ -1,0 +1,25 @@
+{% load static %}
+
+
+<html>
+<div class="container">
+  <link rel="stylesheet" href="{% static '/css/style.css' %}">
+  <form action="/action_page.php">
+    <div class="row">
+      <h2 style="text-align:center">Login with Social Media</h2>
+
+      <div class="container">
+        <a href="https://www.facebook.com/v3.2/dialog/oauth?client_id=2487866891441148&redirect_uri=https%3A%2F%2Fec2-18-219-4-199.us-east-2.compute.amazonaws.com%2Fread&state=%7Bst%3Dpewpew%2C+ds%3D+pupu%7D&response_type=code" class="fb btn">
+          <i class="fa fa-facebook fa-fw"></i> Login with Facebook
+        </a>
+        <a href="upload" class="google btn">
+          <i class="fa fa-google fa-fw"></i> Upload JSON with Google Analytics
+        </a>
+        <a href="download" class="twitter btn">
+          <i class="fa fa-twitter fa-fw"></i> Download files
+        </a>
+      </div>
+    </div>
+  </form>
+</div>
+</html>

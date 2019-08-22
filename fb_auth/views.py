@@ -49,6 +49,8 @@ def print_hello():
 def home(request):
     return render(request, 'index.htm', {'what': 'Django File Upload'})
 
+# Function for getting facebook page data
+
 
 def scrape(request):
     obj1 = request.get_full_path()
@@ -96,6 +98,8 @@ def scrape(request):
             df.to_csv(metrics_csv_file_path)
             output = df
     return render(request, 'base.html', {'output': output})
+
+# displays the pages that the user owns
 
 
 def auth(request):
@@ -150,6 +154,8 @@ def handle_uploaded_file(f):
 def absolute_file_paths(directory):
     return glob(os.path.join(directory, "**"))
 
+# takes all files in the media folder and zips them up
+
 
 def download(request):
     # Files (local path) to put in the .zip
@@ -188,6 +194,8 @@ def download(request):
 
     return resp
 
+# upload a json containing the google analytics credentials of the user
+
 
 def upload(request):
     if request.method == 'POST':
@@ -205,6 +213,8 @@ def getURLS(request):
     obj = request.get_full_path()
 
     return render(request, 'base.html', {'output': obj})
+
+# saves the searches that were made to get to user's website
 
 
 def gA_auth(request):

@@ -228,13 +228,13 @@ def gA_auth(request):
         most_recent_update = old_data.columns[len(old_data.columns) - 1]
         old_data.drop(old_data.columns[old_data.columns.str.contains(
             'unnamed', case=False)], axis=1, inplace=True)
+        output = old_data
         if (most_recent_update != datetime.datetime.today().strftime('%Y-%m-%d')):
             result = pd.merge(old_data, df, how='outer', on=[
                               'Search Engine', 'Search term'])
             result.to_csv(
                 csv_file_path)
-
-        output = old_data
+            output = result
     else:
         df.to_csv(csv_file_path)
         output = df

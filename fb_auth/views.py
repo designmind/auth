@@ -53,8 +53,8 @@ def home(request):
 
 
 def scrape(request):
-    obj1 = request.get_full_path()
-    name = parse.parse_qs(parse.urlsplit(obj1).query)["q"][0]
+    current_url = request.get_full_path()
+    name = parse.parse_qs(parse.urlsplit(current_url).query)["q"][0]
     current_page_access_token = pub_pages_dict[name]
     fooo = "https://graph.facebook.com/v4.0/me?access_token=" + current_page_access_token
     current_id = requests.get(fooo).json()["id"]
@@ -81,6 +81,7 @@ def scrape(request):
         settings.MEDIA_ROOT, name.replace(" ", "-") + '-metrics.csv')
 
     df = post_info_data_frame
+    output = df
 
     if (os.path.exists(metrics_csv_file_path)):
         olddf = pd.read_csv(
@@ -94,22 +95,22 @@ def scrape(request):
                 'unnamed', case=False)], axis=1, inplace=True)
             result.to_csv(metrics_csv_file_path)
             output = result
-        else:
-            df.to_csv(metrics_csv_file_path)
-            output = df
+    else:
+        df.to_csv(metrics_csv_file_path)
+        output = df
+    # the column in the csv under each date is in the form Total Likes / Comment Count for each post
     return render(request, 'base.html', {'output': output})
 
+
 # displays the pages that the user owns
-
-
 def auth(request):
     url = "https://www.facebook.com/v3.2/dialog/oauth?"
     FBparams = {'client_id': appID, 'redirect_uri': 'https://ec2-18-219-4-199.us-east-2.compute.amazonaws.com/read',
                 'state': '{st=pewpew, ds= pupu}', 'response_type': 'code'}
     r = requests.get(url, data=FBparams)
     putInBrowser = r.url + "?" + r.request.body
-    obj1 = request.get_full_path()
-    code = parse_qs(obj1)["/read/?code"][0]
+    current_url = request.get_full_path()
+    code = parse_qs(current_url)["/read/?code"][0]
 
     info_dict = {'client_id': appID, 'client_secret': CLIENT_SECRET,
                  'redirect_uri': 'https://ec2-18-219-4-199.us-east-2.compute.amazonaws.com/read', 'code': code}
@@ -154,22 +155,17 @@ def handle_uploaded_file(f):
 def absolute_file_paths(directory):
     return glob(os.path.join(directory, "**"))
 
-# takes all files in the media folder and zips them up
+# takes all files in the media folder, zips them up, downloads them
 
 
 def download(request):
     # Files (local path) to put in the .zip
-    # FIXME: Change this (get paths from DB etc)
-    # filenames = ["/home/ubuntu/auth/media/Van Gogh Gucci Gang-facebook-result.csv",
-    #              "/home/ubuntu/auth/media/Church of the Flying Spaghetti Monster-facebook-result.csv"]
     filenames = absolute_file_paths(settings.MEDIA_ROOT)
     # Folder name in ZIP archive which contains the above files
-    # E.g [thearchive.zip]/somefiles/file2.txt
-    # FIXME: Set this to something better
     zip_subdir = "data_files_" + datetime.datetime.today().strftime('%Y-%m-%d')
     zip_filename = "%s.zip" % zip_subdir
 
-    # Open StringIO to grab in-memory ZIP contents
+    # Open BytesIO to grab in-memory ZIP contents
     s = BytesIO()
 
     # The zip compressor
@@ -185,7 +181,6 @@ def download(request):
 
     # Must close zip for all contents to be written
     zf.close()
-
     # Grab ZIP file from in-memory, make response with correct MIME-type
     resp = HttpResponse(
         s.getvalue(), content_type="application/x-zip-compressed")
